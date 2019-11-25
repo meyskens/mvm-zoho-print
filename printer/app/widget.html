@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+  <script src="js/lib/ZohoEmbededAppSDK.min.js"></script>
+  <script src="js/lib/jquery-3.4.1.min.js"></script>
+  <script src="js/lib/jspdf.debug.js"></script>
+  <script src="js/lib/popper.min.js"></script>
+  <script src="js/lib/bootstrap.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/data.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert" id="nodata-alert">
+      <strong>Oepsie!</strong> Deze widget heeft geen informatie van ZOHO gekregen!
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <h3 class="text-center">Print Inschrijvingen</h3>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-4 align-self-center">
+        <button type="button" class="btn btn-primary" onclick="printAllInschrijving().then()">Print alle inschrijvingen</button>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <div class="progress" id="print-progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated active" role="progressbar" style="width: 100%">100%</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p>Door limitaties in ZOHO kan dit proces een uur duren. Use with care!</p>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      initializeWidget();
+    })
+  </script>
+</body>
+
+</html>
